@@ -33,4 +33,8 @@ export default function App() {
   const [searchText, setSearchText] = useState('');
   const [showModal, setShowModal] = useState(false);
   
+  const filteredEvents = events.filter(event =>
+    event.title.toLowerCase().includes(searchText.toLowerCase())
+  );
+  
 }
