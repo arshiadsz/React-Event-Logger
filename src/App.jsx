@@ -36,5 +36,14 @@ export default function App() {
   const filteredEvents = events.filter(event =>
     event.title.toLowerCase().includes(searchText.toLowerCase())
   );
-  
+  const addNewEvent = (newEvent) => {
+    const eventWithId = {
+      ...newEvent,
+      id: Date.now()
+    };
+    const allEvents = [...events, eventWithId];
+    setEvents(allEvents);
+    localStorage.setItem('events', JSON.stringify(allEvents));
+    setShowModal(false);
+  };
 }
