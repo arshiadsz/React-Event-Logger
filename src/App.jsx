@@ -46,4 +46,24 @@ export default function App() {
     localStorage.setItem('events', JSON.stringify(allEvents));
     setShowModal(false);
   };
+
+  return (
+    <div className="app">
+      <Sidebar
+        events={filteredEvents}
+        selectedEvent={selectedEvent}
+        onSelectEvent={setSelectedEvent}
+        searchText={searchText}
+        onSearch={setSearchText}
+        onAddClick={() => setShowModal(true)}
+      />
+      <EventDetails event={selectedEvent} />
+      {showModal && (
+        <AddEventModal
+          onClose={() => setShowModal(false)}
+          onAdd={addNewEvent}
+        />
+      )}
+    </div>
+  );
 }
