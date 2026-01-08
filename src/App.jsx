@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Sidebar from './Components/Sidebar';
+import SideBar from './Components/SideBar';
 import EventDetails from './Components/EventDetails';
 import AddEventModal from './Components/AddEventModal';
 
@@ -49,7 +49,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Sidebar
+      <SideBar
         events={filteredEvents}
         selectedEvent={selectedEvent}
         onSelectEvent={setSelectedEvent}
